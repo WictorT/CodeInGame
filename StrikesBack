@@ -1,0 +1,111 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int x;
+int y;
+int nextCheckpointX; // x position of the next check point
+int nextCheckpointY; // y position of the next check point
+int nextCheckpointDist; // distance to the next checkpoint
+int nextCheckpointAngle; // angle between your pod orientation and the direction of the next checkpoint
+int opponentX;
+int opponentY;
+
+/*    
+class Point{
+    public:
+    
+    float x;
+    float y;
+    float distance2(Point p) {
+        return (this->x - p.x)*(this->x - p.x) + (this->y - p.y)*(this->y - p.y);
+    }
+    float distance(Point p) {
+        return sqrt(this->distance2(p));
+    }
+};
+
+class Unit: public Point{
+    public:
+    
+    int id;
+    float r;//radius
+    float vx;
+    float vy;
+};
+
+class Checkpoint: public Unit{
+    public:
+    
+    void Bounce(Unit u);
+};
+
+class Pod: public Unit{
+    public:
+    
+    float angle;
+    int nextCheckpointId;
+    int checked;
+    int timeout;
+    // Pod partner;
+    bool shield;
+    float getAngle(Point p){
+        float d = this->distance(p);
+        float dx = (p.x - this->x) / d;
+        float dy = (p.y - this->y) / d;
+        float a = acos(dx) * 180.0 / 3.14159;
+
+        if (dy < 0) {
+            a = 360.0 - a;
+        }
+        
+        return a;
+    }
+    
+    float diffAngle(Point p){
+        float a = this->getAngle(p);
+        float right = this->angle <= a ? a - this->angle : 360.0 - this->angle + a;
+        float left = this->angle >= a ? this->angle - a : this->angle + 360.0 - a;
+    
+        if (right < left) {
+            return right;
+        } else {
+            return -1*left;
+        }
+    }
+    
+    void rotate(Point p) {
+        float a = this->diffAngle(p);
+    
+        // Can't turn by more than 18° in one turn
+        if (a > 18.0) {
+            a = 18.0;
+        } else if (a < -18.0) {
+            a = -18.0;
+        }
+    
+        this->angle += a;
+    
+        // The % operator is slow. If we can avoid it, it's better.
+        if (this->angle >= 360.0) {
+            this->angle = this->angle - 360.0;
+        } else if (this->angle < 0.0) {
+            this->angle += 360.0;
+        }
+    }
+};
+*/
+
+int main()
+{
+
+    // game loop
+    while (1) {
+        cin >> x >> y >> nextCheckpointX >> nextCheckpointY >> nextCheckpointDist >> nextCheckpointAngle >> opponentX >> opponentY; cin.ignore();
+
+        cout << nextCheckpointX << " " << nextCheckpointY << " BOOST" << endl;
+    }
+}
